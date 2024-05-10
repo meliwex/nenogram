@@ -18,11 +18,8 @@ app.use(compression());
 
 // connecting to the server
 mongoose
-  .connect(
-    process.env.MONGODB.replace("<password>", process.env.MONGODB_PASSWORD),
-    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
-  )
-  .then(() => console.log("Connected to the server..."))
+  .connect(process.env.MONGODB.replace("<password>", process.env.MONGODB_PASSWORD))
+  .then(() => console.log("Connected to DB"))
   .catch((err) => console.log(err));
 
 // routes
